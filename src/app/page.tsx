@@ -20,27 +20,27 @@ function AiChat() {
   const [attachment, setAttachment] = useState<Attachment | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // async function appendWithChatOptions(message: Message | CreateMessage) { 
-  //   new_message = message // edit this new_message based on the work you want to do with the model.
-  //   if (!attachment) { 
-  //     return append(new_message, { data: { model } }); 
-  //   } 
-  //   setAttachment(null); 
-  //   return append({ ...new_message, experimental_attachments: [attachment] }, { data: { model } }); 
-  // }
   async function appendWithChatOptions(message: Message | CreateMessage) {
     if (!attachment) {
-      const assistantMessage: Message = {
-        role: "assistant",
-        content: "Thsanks",
-      } as Message;
-      setMessages((prev) => [...prev, message, assistantMessage]);
-      return;
+      return append(message,  {data: {model}});
     }
 
     setAttachment(null);
-    return append({ ...message, experimental_attachments: [attachment] }, { data: { model } });
+    return append({...message, experimental_attachments: [attachment]},  {data: {model}});
   }
+  // async function appendWithChatOptions(message: Message | CreateMessage) {
+  //   if (!attachment) {
+  //     const assistantMessage: Message = {
+  //       role: "assistant",
+  //       content: "Thsanks",
+  //     } as Message;
+  //     setMessages((prev) => [...prev, message, assistantMessage]);
+  //     return;
+  //   }
+
+  //   setAttachment(null);
+  //   return append({ ...message, experimental_attachments: [attachment] }, { data: { model } });
+  // }
 
   return (
     <div className="container max-w-none flex h-full w-full flex-col items-center gap-6 bg-default-background pt-12 pr-6 pl-6">
