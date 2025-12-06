@@ -1,14 +1,3 @@
-## Overview
-
-**A simple AI chat app** built with Subframe using the following:
-
-- Subframe's [AI chat template](https://www.subframe.com/templates/ai-chat)
-- Subframe Next.js / Tailwind [starter kit](https://github.com/SubframeApp/subframe-nextjs-starter-kit)
-- [OpenAI API](https://platform.openai.com/)
-- [Vercel AI SDK](https://sdk.vercel.ai/)
-
-Use this as a starting point for your project or continue editing the UI in [Subframe](https://subframe.com).
-
 ## Getting Started
 
 1. Download or clone this repo and install the dependencies:
